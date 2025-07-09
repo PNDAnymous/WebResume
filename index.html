@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>James Elkins Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar_container">
+        <svg id="navbar_title" width="250" height="60" viewBox="0 0 250 60" xmlns="http://www.w3.org/2000/svg">
+
+          <defs>
+            <linearGradient id="textGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="black"/>
+              <stop offset="100%" stop-color="white"/>
+            </linearGradient>
+          </defs>
+
+          <text x="50%" y="50%" dominant-baseline=="middle" text-anchor="middle" font-size="28" font-family-Roboto, sans serif" fill="url(#textGradient)">
+          Hello World!
+          </text>
+        </svg>
+
+        <div class="navbar_toggle" id="mobile-menu">
+          <span class="bar"></span> 
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="navbar_projects">
+          <li class="navbar_item">
+            <a href="#about" class="navbar_links">About Me</a>
+          </li>
+          <li class="navbar_item">
+            <a href="#education" class="navbar_links">Education</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="#experience" class="button">Experience</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="#projects" class="button">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      const mobileMenu = document.getElementById('mobile-menu');
+      const navbarProjects = document.querySelector('.navbar_projects');
+      mobileMenu.addEventListener('click', ()=> {
+        mobileMenu.classList.toggle('active');
+        navbarProjects.classList.toggle('active');
+      });
+    </script>
+
+    <header class="hero">
+      <div class="container">
+        <h1>James Elkins</h1>
+        <p class="subtitle">Software Developer | Cybersecurity Enthusiast | Game Dev</p>
+        <a href="#projects" class="btn-primary">View projects</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about" class="card">
+        <h2>About Me</h2>
+        <p>Im a passionate and adaptable software developer with a strong foundation in both frontend and backend technologies. 
+          My experience spans from building web and mobile apps to developing secure networking solutions. I thrive on turning 
+          ideas into polished, functional tools, and Im always eager to learn new skills, explore creative solutions, and take 
+          on meaningful challenges. When Im not coding, youll find me diving into cybersecurity, experimenting with Raspberry 
+          Pi, or working on game-related projects.</p>
+      </section>
+
+      <section id="education" class="card">
+        <h2>Education</h2>
+        <ul class="education-list">
+          <li>Northeastern State University (OK)</li>
+          <li>ICTC (Indian Capital of Technology Center)</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="card">
+        <h2>Projects</h2>
+        <ul class="project-list">
+          <li>MLS CCG (Major League Soccer Card Collecting Game)</li>
+          <li>PCST (Pokemon Center Stock Tracker)</li>
+        </ul>
+      </section>
+
+      <section id="work" class="card">
+        <h2>Work Experience</h2>
+        <ul class="work-list">
+          <li>Cherokee Nation | Network Technician Intern</li>
+        </ul>
+      </section>
+
+      <section id="skills" class="card">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li>skills</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
