@@ -11,8 +11,11 @@
       rel="stylesheet"
     />
   </head>
+
+<!--====Body====-->
+
   <body>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
       <div class="navbar_container">
         <svg id="navbar_title" width="250" height="60" viewBox="0 0 250 60" xmlns="http://www.w3.org/2000/svg">
 
@@ -23,12 +26,14 @@
             </linearGradient>
           </defs>
 
-          <text x="50%" y="50%" dominant-baseline=="middle" text-anchor="middle" font-size="28" font-family-Roboto, sans serif" fill="url(#textGradient)">
+          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="28" font-family=Roboto, sans serif" fill="url(#textGradient)">
           Hello World!
           </text>
         </svg>
 
-        <div class="navbar_toggle" id="mobile-menu">
+<!--====Navbar_Toggle/Projects====-->
+
+        <div class="navbar_toggle" id="mobile-menu" role="button" tabindex="0" aria-label="Toggle Menu" aria-expanded="false" aria-controls="navbar_projects">
           <span class="bar"></span> 
           <span class="bar"></span>
           <span class="bar"></span>
@@ -36,65 +41,97 @@
 
         <ul class="navbar_projects">
           <li class="navbar_item">
-            <a href="#about" class="navbar_links">About Me</a>
+            <a href="#about" class="navbar_links">About</a>
           </li>
           <li class="navbar_item">
             <a href="#education" class="navbar_links">Education</a>
           </li>
-          <li class="navbar_btn">
-            <a href="#experience" class="button">Experience</a>
+          <li class="navbar_item">
+            <a href="#projects" class="navbar_links">Projects</a>
           </li>
-          <li class="navbar_btn">
-            <a href="#projects" class="button">Projects</a>
+          <li class="navbar_item">
+            <a href="#experience" class="navbar_links">Experience</a>
+          </li>
+          <li class="navbar_item">
+            <a href="#skills" class="navbar_links">Skills</a>
+          </li>
+          <li class="navbar_item">
+            <a href="#certs" class="navbar_links">Certifications</a>
           </li>
         </ul>
       </div>
     </nav>
 
+<!--====Inline-Script====-->
+
     <script>
       const mobileMenu = document.getElementById('mobile-menu');
       const navbarProjects = document.querySelector('.navbar_projects');
       mobileMenu.addEventListener('click', ()=> {
-        mobileMenu.classList.toggle('active');
+        const isActive = mobileMenu.classList.toggle('active');
         navbarProjects.classList.toggle('active');
+        mobileMenu.setAttribute('aria-expanded', isActive);
+      });
+
+      mobileMenu.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          mobileMenu.click();
+        }
       });
     </script>
 
+<!--====Header/Hero====-->
+
     <header class="hero">
+      <video class="smoke-webm" autoplay muted loop playsinline>
+        <source src="https://github.com/PNDAnymous/WebResume/raw/refs/heads/main/Images/smoke.webm" type="video/webm" />
+      </video>
+      
       <div class="container">
         <h1>James Elkins</h1>
-        <p class="subtitle">Software Developer | Cybersecurity Enthusiast | Game Dev</p>
-        <a href="#projects" class="btn-primary">View projects</a>
+        <p class="subtitle">Software Developer | Cybersecurity Enthusiast | Network Apprentice</p>
+        <a href="#footer-contact" class="btn-primary">Contact Info</a>
       </div>
     </header>
+
+<!--====Main/Sections====-->
 
     <main class="container">
       <section id="about" class="card">
         <h2>About Me</h2>
-        <p>Im a passionate and adaptable software developer with a strong foundation in both frontend and backend technologies. 
-          My experience spans from building web and mobile apps to developing secure networking solutions. I thrive on turning 
-          ideas into polished, functional tools, and Im always eager to learn new skills, explore creative solutions, and take 
-          on meaningful challenges. When Im not coding, youll find me diving into cybersecurity, experimenting with Raspberry 
-          Pi, or working on game-related projects.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;I am a passionate and adaptable software developer with a growing foundation in 
+          cybersecurity and networking. My experience spans from building web and mobile 
+          apps to creating my own customized network/soc lab at home. I enjoy challenges, and 
+          learning is a journey that I frequent. When I am not coding, I usually am delving 
+          into a rabbit hole in some other area of I.T.</p>
       </section>
 
       <section id="education" class="card">
         <h2>Education</h2>
         <ul class="education-list">
-          <li>Northeastern State University (OK)</li>
-          <li>ICTC (Indian Capital of Technology Center)</li>
+          <li>Northeastern State University (May 11, 2024)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;~ BS in CS w/ minor in finance.
+          </li>
+          <li>Indian Capital of Technology Center (May 03, 2019)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;~ 1-year I.T. Trades program.
+          </li>
         </ul>
       </section>
 
       <section id="projects" class="card">
         <h2>Projects</h2>
         <ul class="project-list">
-          <li>MLS CCG (Major League Soccer Card Collecting Game)</li>
-          <li>PCST (Pokemon Center Stock Tracker)</li>
+          <li>MLS CCG (Major League Soccer Card Collecting Game)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;~ I created this IOS application for my capstone project during my Senior year at NSU. ADD MORE!!!
+          </li>
+          <li>PCST (Pokemon Center Stock Tracker)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;~ ADD MORE TEXT!!!
+          </li>
         </ul>
       </section>
 
-      <section id="work" class="card">
+      <section id="experience" class="card">
         <h2>Work Experience</h2>
         <ul class="work-list">
           <li>Cherokee Nation | Network Technician Intern</li>
@@ -104,9 +141,28 @@
       <section id="skills" class="card">
         <h2>Skills</h2>
         <ul class="skill-list">
-          <li>skills</li>
+          <li>Azure</li>
+          <li>Docker</li>
+          <li>OS - Linux, MacOS, Windows</li>
+          <li>Languages - C++, Python, Swift, Javascript</li>
+          <li>VMware</li>
+        </ul>
+      </section>
+
+      <section id="certs" class="card">
+        <h2>Certifications</h2>
+        <ul class="cert-list">
+          <li>CCST (Cisco Certified Support Technician)</li>
         </ul>
       </section>
     </main>
+
+<!--====Footer====-->
+
+    <footer id="footer-contact" class="footer">
+      <p>Email: <a href="mailto:jameselkins08@gmail.com">jameselkins08@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/JamesElkinsUS" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/JamesElkinsUS</a></p>
+      <p>Github: <a href="https://github.com/PNDAnymous">https://github.com/PNDAnymous</a></p>
+    </footer>
   </body>
 </html>
