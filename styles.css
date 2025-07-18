@@ -130,7 +130,7 @@ html {
   right: 0;
 }
 
-/*========================================================*/
+/*====Body====*/
 
 body {
   font-family: "Roboto", sans-serif;
@@ -239,7 +239,7 @@ section {
   text-decoration: underline;
 }
 
-/*=========================================================*/
+/*====@media====*/
 
 @media (min-width: 768px) {
   /* Hide hamburger toggle (hamburger icon) */
