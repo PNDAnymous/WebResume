@@ -102,11 +102,6 @@ html {
   overflow-y: auto;
 }
 
-.navbar_links:target {
-  padding-top: 80px;
-  scroll-margin-top: 80px;
-}
-
 .navbar_links:link {
   color: whitesmoke;
   background-color: transparent;
@@ -116,7 +111,6 @@ html {
 .navbar_links:visited {
   color: #009fd4;
   background-color: transparent;
-  text-decoration-line: line-through;
 }
 
 .navbar_links:hover {
@@ -148,6 +142,23 @@ main.container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1rem;
+}
+
+.abt-lnk:link {
+  color: whitesmoke;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.abt-lnk:visited {
+  color: #009fd4;
+  background-color: transparent;
+}
+
+.abt-lnk:hover {
+  color: aqua;
+  background-color: transparent;
+  text-decoration: underline;
 }
 
 .hero {
